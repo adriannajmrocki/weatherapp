@@ -1,24 +1,31 @@
-import logo from './logo.svg';
+import React, { Fragment, useState } from 'react';
+import axios from 'axios';
+
+import SearchBar from './components/SearchBar';
+
 import './App.css';
 
 function App() {
+
+  const [inputValue, setInputValue] = useState('');
+  const [currentWeather, setCurrentWeather] = useState({});
+
+  const handleChange = e => {
+    setInputValue(e.target.value);
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    
+    axios.get(`${process.env.REACT_APP_CURRENT_URL}q=${ inputValue }&appid=${process.env.REACT_APP_API_KEY}`)
+    .then(res => console.log(res))
+    .catch(err => console.log(err))
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <SearchBar value={ inputValue } changeValue={ handleChange } submit={ handleSubmit } />
+    </Fragment>
   );
 }
 

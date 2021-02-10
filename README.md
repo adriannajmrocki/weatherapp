@@ -17,7 +17,7 @@ Technology | Description
 ## Installation
 
 #### Node
-Install Node.js from [official website](https://nodejs.org/en/)
+Install Node.js from the [official website](https://nodejs.org/en/)
 
 If the installation was successful, you should be able to run the following commands in your terminal:
 ```
@@ -34,3 +34,4 @@ In the project directory:
 $ npm install
 $ npm start
 ```
+Application will run automatically in your browser at http://localhost:3000/

@@ -12,7 +12,7 @@ function App() {
   const [currentWeather, setCurrentWeather] = useState({
     city: '',
     country: '',
-    // icon: '',
+    icon: undefined,
     temp: null,
     minTemp: null,
     maxTemp: null,
@@ -38,6 +38,7 @@ function App() {
         setCurrentWeather({
           city: res.data.name,
           country: res.data.sys.country,
+          icon: res.data.weather[0].main,
           temp: Math.round(res.data.main.temp - 274.15),
           minTemp: Math.round(res.data.main.temp_min - 274.15),
           maxTemp: Math.round(res.data.main.temp_max - 274.15),

@@ -12,6 +12,4 @@ body {
 
 .container {
   margin: 0 140px;
-  display: grid;
-  grid-auto-flow: row;
 }

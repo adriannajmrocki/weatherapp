@@ -1,3 +1,9 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .search-form {
   display: flex;
   justify-content: center;
@@ -34,16 +40,37 @@
   background: none;
   border: none;
   cursor: pointer;
+  margin-right: 30px;
 }
 
 .search-btn .fa-search {
   color: #fff;
 }
 
+.lang {
+  width: 30px;
+  height: 18.75px;
+  background: none;
+  border: none;
+  margin-right: 8px;
+  cursor: pointer;
+  outline: none;
+}
+
 
 /* Responsive design */
-@media(max-width: 400px) {
+@media(max-width: 470px) {
   .search-label input {
     width: 200px;
+  }
+}
+
+@media(max-width: 360px) {
+  .search-btn {
+    margin-right: 15px;
+  }
+
+  .search-label input {
+    width: 150px;
   }
 }

@@ -17,7 +17,6 @@
 .intro {
   color: #fff;
   max-width: 500px;
-  /* margin: 0 auto; */
   text-align: center;
   line-height: 1.6;
   font-size: 22px;
@@ -48,4 +47,36 @@ a {
 .fa-github {
   color: #fff;
   margin-right: 10px;
+}
+
+
+/* Responsive design */
+@media(max-width: 570px) {
+  .repo {
+    padding: 12px 8px;
+    font-size: 12px;
+  }
+
+  .fa-github {
+    margin-right: 5px;
+  }
+}
+
+@media(max-width: 440px) {
+  .home {
+    margin-top: 30px;
+  }
+
+  .title {
+    font-size: 34px;
+  }
+
+  .intro {
+    font-size: 14px;
+  }
+
+  .repo {
+    padding: 12px 3px;
+    font-size: 8px;
+  }
 }

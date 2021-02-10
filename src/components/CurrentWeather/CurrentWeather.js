@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from "react-i18next";
 
 import clearDay from '../../utils/clear-day.svg';
 import thunderstorms from '../../utils/thunderstorms.svg';
@@ -11,6 +12,8 @@ import tornado from '../../utils/tornado.svg';
 import './CurrentWeather.css';
 
 const CurrentWeather = ({ currentWeather, display }) => {
+
+  const { t } = useTranslation('common');
 
   const setIcon = weather => {
     switch(weather) {
@@ -60,39 +63,40 @@ const CurrentWeather = ({ currentWeather, display }) => {
             <div className="feels-like">
               <i className="fas fa-thermometer-half fa-2x"></i>
               <div>
-                <p className="cond-title">Odczuwalna</p>
+                <p className="cond-title">{t('feels-like')}</p>
                 <p className="value">{currentWeather.feelsLike}&#8451;</p>
               </div>
             </div>
             <div className="clouds">
               <i className="fas fa-cloud fa-2x"></i>
               <div>
-                <p className="cond-title">Zachmurzenie</p>
+                <p className="cond-title">{t('cloudy')}</p>
                 <p className="value">{currentWeather.clouds}%</p>
               </div>
             </div>
             <div className="wind">
               <i className="fas fa-wind fa-2x"></i>
               <div>
-                <p className="cond-title">Wiatr</p>
+                <p className="cond-title">{t('wind')}</p>
                 <p className="value">{currentWeather.wind} km/h</p>
               </div>
             </div>
             <div className="pressure">
               <i className="fas fa-level-down-alt fa-2x"></i>
               <div>
-                <p className="cond-title">Ciśnienie</p>
+                <p className="cond-title">{t('pressure')}</p>
                 <p className="value">{currentWeather.pressure} hPa</p>
               </div>
             </div>
             <div className="humidity">
               <i className="fas fa-tint fa-2x"></i>
               <div>
-                <p className="cond-title">Wilgotność</p>
+                <p className="cond-title">{t('humidity')}</p>
                 <p className="value">{currentWeather.humidity}%</p>
               </div>
             </div>
           </div>
+          <p className="date"><span>{t('last-update')}:</span> {currentWeather.date}</p>
         </div>
       </section>
     ) : (

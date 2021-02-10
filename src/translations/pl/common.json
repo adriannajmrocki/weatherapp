@@ -1,0 +1,13 @@
+{
+  "enter-city": "Wpisz miasto",
+  "intro-1": "Witaj w Weather App - prostej aplikacji pogodowej, stworzonej dzięki",
+  "intro-2": "Wpisz nazwę swojego miasta w wyszukiwarkę, by wyświetlić wyniki.",
+  "git": "Repozytorium GitHub",
+  "feels-like": "Odczuwalna",
+  "cloudy": "Zachmurzenie",
+  "wind": "Wiatr",
+  "pressure": "Ciśnienie",
+  "humidity": "Wilgotność",
+  "last-update": "Ostatnia aktualizacja",
+  "error": "Nie znaleziono miasta"
+}

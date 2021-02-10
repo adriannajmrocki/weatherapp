@@ -110,6 +110,19 @@
   margin-top: 8px;
 }
 
+.date {
+  color: #fff;
+  font-size: 13px;
+  font-style: italic;
+  margin-top: 20px;
+  float: right;
+}
+
+.date span {
+  font-weight: 900;
+  font-size: 16px;
+}
+
 
 /* Responsive design */
 @media(max-width: 1340px) {

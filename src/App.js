@@ -14,6 +14,7 @@ function App() {
   const [currentWeather, setCurrentWeather] = useState({
     city: '',
     country: '',
+    date: '',
     icon: undefined,
     temp: null,
     minTemp: null,
@@ -37,11 +38,13 @@ function App() {
     
     axios.get(`${process.env.REACT_APP_CURRENT_URL}q=${ inputValue }&appid=${process.env.REACT_APP_API_KEY}`)
     .then(res => {
-      console.log(res);
       if (res.status === 200) {
+        const dateTime = new Date().toLocaleString();
+
         setCurrentWeather({
           city: res.data.name,
           country: res.data.sys.country,
+          date: dateTime,
           icon: res.data.weather[0].main,
           temp: Math.round(res.data.main.temp - 274.15),
           minTemp: Math.round(res.data.main.temp_min - 274.15),
@@ -68,10 +71,12 @@ function App() {
 
   return (
     <Fragment>
-      <SearchBar value={ inputValue } changeValue={ handleChange } submit={ handleSubmit } />
-      <Home show={ showHomePage } />
-      <CurrentWeather currentWeather={ currentWeather } display={ shouldDisplayWeather } />
-      <Error error={ error } />
+      <React.Suspense fallback="Loading...">
+        <SearchBar value={ inputValue } changeValue={ handleChange } submit={ handleSubmit } />
+        <Home show={ showHomePage } />
+        <CurrentWeather currentWeather={ currentWeather } display={ shouldDisplayWeather } />
+        <Error error={ error } />
+      </React.Suspense>
     </Fragment>
   );
 }

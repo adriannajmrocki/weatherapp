@@ -1,0 +1,13 @@
+{
+  "enter-city": "Enter the city",
+  "intro-1": "Welcome to Weather App - a simple app with the current weather conditions created with",
+  "intro-2": "Enter the city name in the search bar to see the results.",
+  "git": "GitHub repository",
+  "feels-like": "Feels like",
+  "cloudy": "Cloudy",
+  "wind": "Wind",
+  "pressure": "Pressure",
+  "humidity": "Humidity",
+  "last-update": "Last update",
+  "error": "City not found"
+}

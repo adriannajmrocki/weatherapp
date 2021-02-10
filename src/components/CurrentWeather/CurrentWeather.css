@@ -36,7 +36,6 @@
   font-size: 120px;
   font-weight: 900;
   color: #fff;
-
 }
 
 .min-max-temp {
@@ -109,4 +108,88 @@
 .value {
   font-size: 14px;
   margin-top: 8px;
+}
+
+
+/* Responsive design */
+@media(max-width: 1340px) {
+  .other-conditions {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media(max-width: 1160px) {
+  .icon-div {
+    margin-right: -100px;
+  }
+  
+  .temps {
+    margin-left: -100px;
+  }
+}
+
+@media(max-width: 1000px) {
+  .icon-div {
+    margin-right: -50px;
+  }
+  
+  .temps {
+    margin-left: -50px;
+  }
+}
+
+@media(max-width: 800px) {
+  .current-weather {
+    margin-top: 0px;
+  }
+
+  .icon {
+    height: 250px;
+    width: 250px;
+  }
+
+  .temp {
+    font-size: 100px;
+  }
+
+  .other-conditions {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width: 750px) {
+  .icon-temp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .icon-div {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .icon {
+    height: 150px;
+    width: 200px;
+  }
+
+  .temps {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+}
+
+@media(max-width: 600px) {
+  .other-conditions {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .temp {
+    font-size: 70px;
+  }
 }

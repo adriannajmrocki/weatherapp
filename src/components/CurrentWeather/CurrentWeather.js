@@ -96,7 +96,7 @@ const CurrentWeather = ({ currentWeather, display }) => {
         </div>
       </section>
     ) : (
-      <div>BRAK DANYCH</div>
+      false
     )
   );
 }

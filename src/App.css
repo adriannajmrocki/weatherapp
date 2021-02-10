@@ -12,4 +12,13 @@ body {
 
 .container {
   margin: 0 140px;
+  padding-bottom: 40px;
+}
+
+
+/* Responsive design */
+@media(max-width: 1000px) {
+  .container {
+    margin: 0 60px;
+  }
 }

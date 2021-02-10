@@ -11,7 +11,7 @@
 }
 
 .search-label input {
-  width: 250px;
+  width: 300px;
   padding: 10px 15px;
   border: none;
   border-radius: 15px;
@@ -38,4 +38,12 @@
 
 .search-btn .fa-search {
   color: #fff;
+}
+
+
+/* Responsive design */
+@media(max-width: 400px) {
+  .search-label input {
+    width: 200px;
+  }
 }

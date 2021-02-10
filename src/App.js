@@ -3,6 +3,8 @@ import axios from 'axios';
 
 import SearchBar from './components/SearchBar';
 import CurrentWeather from './components/CurrentWeather';
+import Error from './components/Error';
+import Home from './components/Home';
 
 import './App.css';
 
@@ -23,6 +25,8 @@ function App() {
     humidity: null,
   });
   const [shouldDisplayWeather, setShouldDisplayWeather] = useState(false);
+  const [error, setError] = useState(false);
+  const [showHomePage, setShowHomePage] = useState(true);
 
   const handleChange = e => {
     setInputValue(e.target.value);
@@ -49,9 +53,15 @@ function App() {
           humidity: res.data.main.humidity
         });
         setShouldDisplayWeather(true);
+        setError(false);
+        setShowHomePage(false);
       }
     })
-    .catch(err => console.log(err))
+    .catch(err => {
+      setError(true);
+      setShouldDisplayWeather(false);
+      setShowHomePage(false);     
+    })
 
     setInputValue('');
   }
@@ -59,7 +69,9 @@ function App() {
   return (
     <Fragment>
       <SearchBar value={ inputValue } changeValue={ handleChange } submit={ handleSubmit } />
+      <Home show={ showHomePage } />
       <CurrentWeather currentWeather={ currentWeather } display={ shouldDisplayWeather } />
+      <Error error={ error } />
     </Fragment>
   );
 }
